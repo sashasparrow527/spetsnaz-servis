@@ -1,286 +1,286 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1">
- <meta name="theme-color" content="#0b1e36">
- <meta name="description" content="Спецназ Сервис — сантехнические, электромонтажные и плиточные работы в Караганде, Пришахтинске и Сортировке. Консультация в WhatsApp.">
- <title>Спецназ Сервис — сантехника, электрика и плиточные работы</title>
- <style>
-   :root{--navy:#0b1e36;--blue:#173e68;--blue2:#245b91;--yellow:#ffd23f;--paper:#f4f7fb;--ink:#17263a;--muted:#617086;--line:#dfe6ef;--white:#fff}
-   *{box-sizing:border-box}
-   html{scroll-behavior:smooth}
-   body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);line-height:1.55;background:#fff}
-   a{color:inherit}
-   .container{width:min(1120px,90%);margin:auto}
-   .topbar{background:var(--navy);color:#fff;border-bottom:1px solid rgba(255,255,255,.1)}
-   .topbar-inner{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-   .logo{font-weight:900;font-size:20px;letter-spacing:.06em;line-height:1.2}
-   .logo span{display:block;color:var(--yellow);font-size:12px;letter-spacing:.25em;margin-top:6px}
-   .top-right{display:flex;align-items:center;gap:24px}
-   .service-area{font-size:13px;color:#d7e1ed}
-   .lang-switch{display:flex;padding:4px;border:1px solid #45617e;border-radius:10px;gap:3px}
-   .lang-switch button{border:0;background:transparent;color:#dce7f3;padding:8px 11px;border-radius:7px;font-weight:800;cursor:pointer}
-   .lang-switch button.active{background:var(--yellow);color:var(--navy)}
-   .hero{position:relative;overflow:hidden;background:linear-gradient(125deg,#091a30 0%,#12365d 58%,#1b4c7c 100%);color:#fff;padding:86px 0 74px}
-   .hero:before{content:"";position:absolute;width:480px;height:480px;border:1px solid rgba(255,210,63,.17);border-radius:50%;right:-120px;top:-180px;box-shadow:0 0 0 45px rgba(255,255,255,.025),0 0 0 95px rgba(255,255,255,.02)}
-   .hero-grid{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center}
-   .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--yellow);font-size:12px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
-   .eyebrow:before{content:"";width:30px;height:3px;background:var(--yellow)}
-   h1{font-size:clamp(40px,5.8vw,68px);line-height:1.04;letter-spacing:-.04em;margin:20px 0}
-   .hero-copy{max-width:650px;color:#dce7f3;font-size:18px}
-   .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
-   .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 22px;border-radius:10px;text-decoration:none;font-weight:900;border:1px solid transparent;transition:transform .2s,background .2s}
-   .btn:hover{transform:translateY(-2px)}
-   .btn-yellow{background:var(--yellow);color:var(--navy)}
-   .btn-ghost{border-color:rgba(255,255,255,.35);color:#fff}
-   .pulse{animation:pulse 2.3s infinite}
-   @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,210,63,.48)}70%{box-shadow:0 0 0 13px rgba(255,210,63,0)}100%{box-shadow:0 0 0 0 rgba(255,210,63,0)}}
-   .hero-panel{padding:28px;border-radius:20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.17);backdrop-filter:blur(6px)}
-   .panel-label{font-size:12px;color:var(--yellow);font-weight:900;letter-spacing:.14em;text-transform:uppercase}
-   .hero-panel h2{font-size:25px;line-height:1.2;margin:12px 0 20px;color:#fff}
-   .panel-row{display:flex;gap:13px;padding:15px 0;border-top:1px solid rgba(255,255,255,.14);color:#e3ebf5}
-   .panel-dot{flex:0 0 9px;height:9px;border-radius:3px;background:var(--yellow);margin-top:8px}
-   section{padding:76px 0}
-   .section-head{max-width:730px;margin-bottom:34px}
-   .section-kicker{color:var(--blue2);font-size:12px;font-weight:900;letter-spacing:.15em;text-transform:uppercase}
-   h2.section-title{font-size:clamp(31px,4vw,44px);letter-spacing:-.03em;line-height:1.12;color:var(--navy);margin:10px 0 14px}
-   .section-lead{color:var(--muted);font-size:17px;margin:0}
-   .services{background:#fff}
-   .service-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-   .service-card{position:relative;border:1px solid var(--line);border-radius:17px;padding:28px;background:#fff;overflow:hidden;box-shadow:0 8px 25px rgba(11,30,54,.035)}
-   .service-card:after{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--yellow)}
-   .service-number{font-size:12px;color:var(--blue2);font-weight:800;letter-spacing:.12em;border-bottom:2px solid var(--yellow);display:inline-block;padding-bottom:6px}
-   .service-card h3{font-size:23px;color:var(--navy);margin:9px 0 12px;line-height:1.25}
-   .service-card p{color:var(--muted);margin:0}
-   .service-card ul{padding-left:19px;margin:14px 0 0;color:var(--ink)}
-   .service-card li{margin:5px 0}
-   .full-width{grid-column:1/-1;background:var(--paper)}
-   .process{background:var(--paper)}
-   .benefits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-   .benefit{padding:24px;background:#fff;border:1px solid var(--line);border-radius:15px}
-   .benefit .index{display:inline-grid;place-items:center;width:37px;height:37px;border-radius:10px;background:var(--yellow);font-weight:900;color:var(--navy)}
-   .benefit h3{font-size:18px;margin:15px 0 6px;color:var(--navy)}
-   .benefit p{margin:0;color:var(--muted)}
-   .coverage{background:#fff}
-   .city-list{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
-   .city{padding:12px 18px;background:var(--paper);border:1px solid var(--line);border-radius:100px;font-weight:800;color:var(--navy)}
-   .contact{background:var(--navy);color:#fff;text-align:center;padding:72px 0}
-   .contact .section-title{color:#fff}
-   .contact .section-lead{color:#d3deeb;max-width:650px;margin:0 auto}
-   .contact .hero-actions{justify-content:center}
-   .contact-note{font-size:13px;color:#afc1d5;margin-top:18px}
-   footer{background:#061426;color:#d5e0ed;padding:26px 0}
-   .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-   .footer-brand{font-weight:900;color:#fff}
-   .footer-meta{font-size:13px;color:#aebed0}
-   .instagram{color:var(--yellow);font-weight:800;text-decoration:none}
-   .instagram:hover{text-decoration:underline}
-   @media(max-width:780px){.hero-grid{grid-template-columns:1fr;gap:30px}.hero{padding:60px 0}.hero-panel{max-width:560px}.benefits{grid-template-columns:1fr}.top-right{gap:12px}.service-area{display:none}}
-   @media(max-width:600px){.topbar-inner{min-height:72px}.logo{font-size:17px}.top-right{margin-left:auto}.hero{padding:48px 0}.hero-copy{font-size:16px}section{padding:56px 0}.service-grid{grid-template-columns:1fr}.full-width{grid-column:auto}.service-card{padding:23px}.hero-actions{flex-direction:column;align-items:stretch}.btn{width:100%}.footer-inner{align-items:flex-start;flex-direction:column}}
-   @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.pulse{animation:none}.btn{transition:none}}
- </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1e36">
+  <meta name="description" content="Спецназ Сервис — сантехнические, электромонтажные и плиточные работы в Караганде, Пришахтинске и Сортировке. Консультация в WhatsApp.">
+  <title>Спецназ Сервис — сантехника, электрика и плиточные работы</title>
+  <style>
+    :root{--navy:#0b1e36;--blue:#173e68;--blue2:#245b91;--yellow:#ffd23f;--paper:#f4f7fb;--ink:#17263a;--muted:#617086;--line:#dfe6ef;--white:#fff}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);line-height:1.55;background:#fff}
+    a{color:inherit}
+    .container{width:min(1120px,90%);margin:auto}
+    .topbar{background:var(--navy);color:#fff;border-bottom:1px solid rgba(255,255,255,.1)}
+    .topbar-inner{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .logo{font-weight:900;font-size:20px;letter-spacing:.06em;line-height:1.2}
+    .logo span{display:block;color:var(--yellow);font-size:12px;letter-spacing:.25em;margin-top:6px}
+    .top-right{display:flex;align-items:center;gap:24px}
+    .service-area{font-size:13px;color:#d7e1ed}
+    .lang-switch{display:flex;padding:4px;border:1px solid #45617e;border-radius:10px;gap:3px}
+    .lang-switch button{border:0;background:transparent;color:#dce7f3;padding:8px 11px;border-radius:7px;font-weight:800;cursor:pointer}
+    .lang-switch button.active{background:var(--yellow);color:var(--navy)}
+    .hero{position:relative;overflow:hidden;background:linear-gradient(125deg,#091a30 0%,#12365d 58%,#1b4c7c 100%);color:#fff;padding:86px 0 74px}
+    .hero:before{content:"";position:absolute;width:480px;height:480px;border:1px solid rgba(255,210,63,.17);border-radius:50%;right:-120px;top:-180px;box-shadow:0 0 0 45px rgba(255,255,255,.025),0 0 0 95px rgba(255,255,255,.02)}
+    .hero-grid{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--yellow);font-size:12px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
+    .eyebrow:before{content:"";width:30px;height:3px;background:var(--yellow)}
+    h1{font-size:clamp(40px,5.8vw,68px);line-height:1.04;letter-spacing:-.04em;margin:20px 0}
+    .hero-copy{max-width:650px;color:#dce7f3;font-size:18px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 22px;border-radius:10px;text-decoration:none;font-weight:900;border:1px solid transparent;transition:transform .2s,background .2s}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-yellow{background:var(--yellow);color:var(--navy)}
+    .btn-ghost{border-color:rgba(255,255,255,.35);color:#fff}
+    .pulse{animation:pulse 2.3s infinite}
+    @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,210,63,.48)}70%{box-shadow:0 0 0 13px rgba(255,210,63,0)}100%{box-shadow:0 0 0 0 rgba(255,210,63,0)}}
+    .hero-panel{padding:28px;border-radius:20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.17);backdrop-filter:blur(6px)}
+    .panel-label{font-size:12px;color:var(--yellow);font-weight:900;letter-spacing:.14em;text-transform:uppercase}
+    .hero-panel h2{font-size:25px;line-height:1.2;margin:12px 0 20px;color:#fff}
+    .panel-row{display:flex;gap:13px;padding:15px 0;border-top:1px solid rgba(255,255,255,.14);color:#e3ebf5}
+    .panel-dot{flex:0 0 9px;height:9px;border-radius:3px;background:var(--yellow);margin-top:8px}
+    section{padding:76px 0}
+    .section-head{max-width:730px;margin-bottom:34px}
+    .section-kicker{color:var(--blue2);font-size:12px;font-weight:900;letter-spacing:.15em;text-transform:uppercase}
+    h2.section-title{font-size:clamp(31px,4vw,44px);letter-spacing:-.03em;line-height:1.12;color:var(--navy);margin:10px 0 14px}
+    .section-lead{color:var(--muted);font-size:17px;margin:0}
+    .services{background:#fff}
+    .service-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .service-card{position:relative;border:1px solid var(--line);border-radius:17px;padding:28px;background:#fff;overflow:hidden;box-shadow:0 8px 25px rgba(11,30,54,.035)}
+    .service-card:after{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--yellow)}
+    .service-number{font-size:12px;color:var(--blue2);font-weight:800;letter-spacing:.12em;border-bottom:2px solid var(--yellow);display:inline-block;padding-bottom:6px}
+    .service-card h3{font-size:23px;color:var(--navy);margin:9px 0 12px;line-height:1.25}
+    .service-card p{color:var(--muted);margin:0}
+    .service-card ul{padding-left:19px;margin:14px 0 0;color:var(--ink)}
+    .service-card li{margin:5px 0}
+    .full-width{grid-column:1/-1;background:var(--paper)}
+    .process{background:var(--paper)}
+    .benefits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .benefit{padding:24px;background:#fff;border:1px solid var(--line);border-radius:15px}
+    .benefit .index{display:inline-grid;place-items:center;width:37px;height:37px;border-radius:10px;background:var(--yellow);font-weight:900;color:var(--navy)}
+    .benefit h3{font-size:18px;margin:15px 0 6px;color:var(--navy)}
+    .benefit p{margin:0;color:var(--muted)}
+    .coverage{background:#fff}
+    .city-list{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+    .city{padding:12px 18px;background:var(--paper);border:1px solid var(--line);border-radius:100px;font-weight:800;color:var(--navy)}
+    .contact{background:var(--navy);color:#fff;text-align:center;padding:72px 0}
+    .contact .section-title{color:#fff}
+    .contact .section-lead{color:#d3deeb;max-width:650px;margin:0 auto}
+    .contact .hero-actions{justify-content:center}
+    .contact-note{font-size:13px;color:#afc1d5;margin-top:18px}
+    footer{background:#061426;color:#d5e0ed;padding:26px 0}
+    .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+    .footer-brand{font-weight:900;color:#fff}
+    .footer-meta{font-size:13px;color:#aebed0}
+    .instagram{color:var(--yellow);font-weight:800;text-decoration:none}
+    .instagram:hover{text-decoration:underline}
+    @media(max-width:780px){.hero-grid{grid-template-columns:1fr;gap:30px}.hero{padding:60px 0}.hero-panel{max-width:560px}.benefits{grid-template-columns:1fr}.top-right{gap:12px}.service-area{display:none}}
+    @media(max-width:600px){.topbar-inner{min-height:72px}.logo{font-size:17px}.top-right{margin-left:auto}.hero{padding:48px 0}.hero-copy{font-size:16px}section{padding:56px 0}.service-grid{grid-template-columns:1fr}.full-width{grid-column:auto}.service-card{padding:23px}.hero-actions{flex-direction:column;align-items:stretch}.btn{width:100%}.footer-inner{align-items:flex-start;flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.pulse{animation:none}.btn{transition:none}}
+  </style>
 </head>
 <body>
 <header class="topbar">
- <div class="container topbar-inner">
-   <a class="logo" href="#" aria-label="Спецназ Сервис">СПЕЦНАЗ <span>СЕРВИС</span></a>
-   <div class="top-right">
-     <div class="service-area" data-ru="Караганда · Пришахтинск · Сортировка" data-kz="Қарағанды · Пришахтинск · Сортировка">Караганда · Пришахтинск · Сортировка</div>
-     <div class="lang-switch" aria-label="Выбор языка">
-       <button id="ruBtn" class="active" type="button" aria-pressed="true" onclick="setSiteLanguage('ru')">RU</button>
-       <button id="kzBtn" type="button" aria-pressed="false" onclick="setSiteLanguage('kz')">KZ</button>
-     </div>
-   </div>
- </div>
+  <div class="container topbar-inner">
+    <a class="logo" href="#" aria-label="Спецназ Сервис">СПЕЦНАЗ <span>СЕРВИС</span></a>
+    <div class="top-right">
+      <div class="service-area" data-ru="Караганда · Пришахтинск · Сортировка" data-kz="Қарағанды · Пришахтинск · Сортировка">Караганда · Пришахтинск · Сортировка</div>
+      <div class="lang-switch" aria-label="Выбор языка">
+        <button id="ruBtn" class="active" type="button" aria-pressed="true" onclick="setSiteLanguage('ru')">RU</button>
+        <button id="kzBtn" type="button" aria-pressed="false" onclick="setSiteLanguage('kz')">KZ</button>
+      </div>
+    </div>
+  </div>
 </header>
- 
+
 <main>
- <section class="hero">
-   <div class="container hero-grid">
-     <div>
-       <div class="eyebrow" data-ru="КАРАГАНДА • ПРИШAХТИНСК • СОРТИРОВКА" data-kz="ҚАРАҒАНДЫ • ПРИШАХТИНСК • СОРТИРОВКА">КАРАГАНДА • ПРИШАХТИНСК • СОРТИРОВКА</div>
-       <h1 data-ru="Сантехник и электрик 24/7" data-kz="Сантехник және электрик 24/7">Сантехник и электрик 24/7</h1>
-       <p class="hero-copy" data-ru="Быстро реагируем на заявки в Караганде, Пришахтинске и Сортировке. Сантехника, электрика и плиточные работы. Напишите в WhatsApp — обсудим задачу и стоимость." data-kz="Қарағандыда, Пришахтинскіде және Сортировкада өтінімдерге жедел жауап береміз. Сантехника, электр жұмыстары, плитка төсеу және жөндеу жұмыстары. WhatsApp-қа жазыңыз — жұмысты және бағасын талқылаймыз.">Быстро реагируем на заявки в Караганде, Пришахтинске и Сортировке. Сантехника, электрика и плиточные работы. Напишите в WhatsApp — обсудим задачу и стоимость.</p>
-       <div class="hero-actions">
-         <a class="btn btn-yellow pulse wa-link" href="https://wa.me/77473719750?text=Здравствуйте%21%20Хочу%20проконсультироваться%20по%20поводу%20ваших%20услуг." target="_blank" rel="noopener noreferrer"><span data-ru="Написать в WhatsApp" data-kz="WhatsApp арқылы жазу">Написать в WhatsApp</span> <span aria-hidden="true">↗</span></a>
-         <a class="btn btn-ghost" href="#services" data-ru="Посмотреть услуги ↓" data-kz="Қызметтерді көру ↓">Посмотреть услуги ↓</a>
-       </div>
-     </div>
-     <aside class="hero-panel">
-       <div class="panel-label" data-ru="СПЕЦНАЗ СЕРВИС" data-kz="СПЕЦНАЗ СЕРВИС">СПЕЦНАЗ СЕРВИС</div>
-       <h2 data-ru="Работы для дома и ремонта" data-kz="Үйге және жөндеуге арналған жұмыстар">Работы для дома и ремонта</h2>
-       <div class="panel-row"><span class="panel-dot"></span><span data-ru="Сантехника: монтаж, замена и ремонт" data-kz="Сантехника: орнату, ауыстыру және жөндеу">Сантехника: монтаж, замена и ремонт</span></div>
-       <div class="panel-row"><span class="panel-dot"></span><span data-ru="Электрика: подключение и диагностика" data-kz="Электр жұмыстары: қосу және ақауды анықтау">Электрика: подключение и диагностика</span></div>
-       <div class="panel-row"><span class="panel-dot"></span><span data-ru="Плитка: укладка и аккуратное восстановление" data-kz="Плитка: төсеу және ұқыпты қалпына келтіру">Плитка: укладка и аккуратное восстановление</span></div>
-     </aside>
-   </div>
- </section>
- 
- <section class="services" id="services">
-   <div class="container">
-     <div class="section-head">
-       <div class="section-kicker" data-ru="ЧЕМ ПОМОЖЕМ" data-kz="ҚАНДАЙ ҚЫЗМЕТ КӨРСЕТЕМІЗ">ЧЕМ ПОМОЖЕМ</div>
-       <h2 class="section-title" data-ru="Услуги Спецназ Сервис" data-kz="Спецназ Сервис қызметтері">Услуги Спецназ Сервис</h2>
-       <p class="section-lead" data-ru="Можно обратиться с одной конкретной задачей или обсудить несколько видов работ в рамках одного проекта." data-kz="Бір нақты жұмыс бойынша да, бір жоба аясындағы бірнеше жұмыс түрі бойынша да хабарласа аласыз.">Можно обратиться с одной конкретной задачей или обсудить несколько видов работ в рамках одного проекта.</p>
-     </div>
-     <div class="service-grid">
-       <article class="service-card">
-         <div class="service-number" data-ru="Сантехнические работы" data-kz="Сантехникалық жұмыстар">Сантехнические работы</div>
-         <h3 data-ru="Сантехнические работы" data-kz="Сантехникалық жұмыстар">Сантехнические работы</h3>
-         <p data-ru="Монтаж, подключение, замена и ремонт сантехнического оборудования." data-kz="Сантехникалық жабдықты орнату, қосу, ауыстыру және жөндеу.">Монтаж, подключение, замена и ремонт сантехнического оборудования.</p>
-         <ul>
-           <li data-ru="Установка и замена смесителей, душевых леек и шлангов" data-kz="Араластырғыштарды, душ бастиектері мен шлангілерді орнату және ауыстыру">Установка и замена смесителей, душевых леек и шлангов</li>
-           <li data-ru="Установка унитазов, раковин и моек" data-kz="Унитаз, қолжуғыш және асүй раковинасын орнату">Установка унитазов, раковин и моек</li>
-           <li data-ru="Установка бойлеров (титанов), радиаторов и полотенцесушителей" data-kz="Бойлерлерді (титандарды), радиаторлар мен сүлгі кептіргіштерді орнату">Установка бойлеров (титанов), радиаторов и полотенцесушителей</li>
-           <li data-ru="Замена сифонов, гибких подводок, запорных кранов и арматуры бачка" data-kz="Сифондарды, иілгіш жалғағыштарды, жабу крандарын және бачок арматурасын ауыстыру">Замена сифонов, гибких подводок, запорных кранов и арматуры бачка</li>
-           <li data-ru="Устранение протечек, засоров и мелких неисправностей" data-kz="Су ағуын, бітелуді және ұсақ ақауларды жою">Устранение протечек, засоров и мелких неисправностей</li>
-           <li data-ru="Подключение стиральных и посудомоечных машин" data-kz="Кір жуғыш және ыдыс жуғыш машиналарды қосу">Подключение стиральных и посудомоечных машин</li>
-         </ul>
-       </article>
-       <article class="service-card">
-         <div class="service-number" data-ru="Электромонтажные работы" data-kz="Электр монтаждау жұмыстары">Электромонтажные работы</div>
-         <h3 data-ru="Электромонтажные работы" data-kz="Электр монтаждау жұмыстары">Электромонтажные работы</h3>
-         <p data-ru="Установка, подключение, замена оборудования и поиск электрических неисправностей." data-kz="Жабдықты орнату, қосу, ауыстыру және электр ақауларын анықтау.">Установка, подключение, замена оборудования и поиск электрических неисправностей.</p>
-         <ul>
-           <li data-ru="Установка люстр, светильников и бра" data-kz="Аспашамдарды, шамдарды және бра орнату">Установка люстр, светильников и бра</li>
-           <li data-ru="Установка и перенос розеток и выключателей" data-kz="Розеткалар мен қосқыштарды орнату және орнын ауыстыру">Установка и перенос розеток и выключателей</li>
-           <li data-ru="Прокладка кабеля и подключение бытового оборудования" data-kz="Кабель тарту және тұрмыстық жабдықты қосу">Прокладка кабеля и подключение бытового оборудования</li>
-           <li data-ru="Проверка и ревизия электрощитка, автоматов и соединений" data-kz="Электр қалқанын, автоматтарды және қосылыстарды тексеру">Проверка и ревизия электрощитка, автоматов и соединений</li>
-           <li data-ru="Поиск причин отключения электричества и неисправностей" data-kz="Электрдің өшу себептерін және ақауларды анықтау">Поиск причин отключения электричества и неисправностей</li>
-           <li data-ru="Замена автоматов, розеток, выключателей и повреждённых участков проводки" data-kz="Автоматтарды, розеткаларды, қосқыштарды және сымның зақымдалған бөліктерін ауыстыру">Замена автоматов, розеток, выключателей и повреждённых участков проводки</li>
-         </ul>
-       </article>
-       <article class="service-card">
-         <div class="service-number" data-ru="Укладка плитки" data-kz="Плитка төсеу">Укладка плитки</div>
-         <h3 data-ru="Плиточные работы" data-kz="Плитка төсеу жұмыстары">Плиточные работы</h3>
-         <p data-ru="Укладка кафеля и керамической плитки, а также аккуратные локальные работы при ремонте." data-kz="Кафель және керамикалық плитка төсеу, сондай-ақ жөндеу кезінде плитканы жергілікті түрде ұқыпты ауыстыру.">Укладка кафеля и керамической плитки, а также аккуратные локальные работы при ремонте.</p>
-         <ul>
-           <li data-ru="Укладка плитки" data-kz="Плитка төсеу">Укладка плитки на стены и пол</li>
-           <li data-ru="Аккуратное снятие и замена отдельных плиток" data-kz="Жеке плиткаларды ұқыпты алып, ауыстыру">Аккуратное снятие и замена отдельных плиток</li>
-           <li data-ru="Частичный демонтаж для доступа к скрытым коммуникациям" data-kz="Жасырын коммуникацияларға жету үшін плитканың бір бөлігін алу">Частичный демонтаж для доступа к скрытым коммуникациям</li>
-           <li data-ru="Восстановление плиточной отделки после ремонта труб и коммуникаций" data-kz="Құбырлар мен коммуникациялар жөнделгеннен кейін плитка қаптамасын қалпына келтіру">Восстановление плиточной отделки после ремонта труб и коммуникаций</li>
-         </ul>
-       </article>
-       <article class="service-card">
-         <div class="service-number" data-ru="Другие работы" data-kz="Басқа жұмыстар">Другие работы</div>
-         <h3 data-ru="Другие работы" data-kz="Басқа жұмыстар">Другие работы</h3>
-         <p data-ru="Сочетаем сантехнические, электрические и сопутствующие работы в рамках согласованной задачи." data-kz="Келісілген тапсырма аясында сантехникалық, электр және қосымша жұмыстарды кешенді түрде орындаймыз.">Сочетаем сантехнические, электрические и сопутствующие работы в рамках согласованной задачи.</p>
-         <ul>
-           <li data-ru="Обсуждение задачи и нужных этапов" data-kz="Міндет пен қажетті кезеңдерді талқылау">Обсуждение задачи и нужных этапов</li>
-           <li data-ru="Согласование объёма работ до начала" data-kz="Жұмыс басталғанға дейін көлемін келісу">Согласование объёма работ до начала</li>
-           <li data-ru="Выполнение отдельных этапов в рамках одного обращения" data-kz="Бір өтініш аясында бірнеше кезеңді орындау">Выполнение отдельных этапов в рамках одного обращения</li>
-         </ul>
-       </article>
-     </div>
-   </div>
- </section>
- 
- <section class="process">
-   <div class="container">
-     <div class="section-head">
-       <div class="section-kicker" data-ru="ПОНЯТНО И ЗАРАНЕЕ" data-kz="ТҮСІНІКТІ ЖӘНЕ АЛДЫН АЛА">ПОНЯТНО И ЗАРАНЕЕ</div>
-       <h2 class="section-title" data-ru="Как обсудить вашу задачу" data-kz="Жұмысты қалай талқылауға болады">Как обсудить вашу задачу</h2>
-       <p class="section-lead" data-ru="Свяжитесь с нами в переписке — без необходимости звонить." data-kz="Бізге хабарлама жазыңыз — қоңырау шалудың қажеті жоқ.">Свяжитесь с нами в переписке — без необходимости звонить.</p>
-     </div>
-     <div class="benefits">
-       <article class="benefit"><span class="index">01</span><h3 data-ru="Напишите в WhatsApp" data-kz="WhatsApp арқылы жазыңыз">Напишите в WhatsApp</h3><p data-ru="Опишите, что нужно установить, заменить или отремонтировать. При желании приложите фото." data-kz="Нені орнату, ауыстыру немесе жөндеу керегін жазыңыз. Қаласаңыз, фотосурет тіркей аласыз.">Опишите, что нужно установить, заменить или отремонтировать. При желании приложите фото.</p></article>
-       <article class="benefit"><span class="index">02</span><h3 data-ru="Уточним детали" data-kz="Мән-жайын нақтылаймыз">Уточним детали</h3><p data-ru="Обсудим задачу, условия и необходимый объём работ." data-kz="Жұмыстың түрін, жағдайын және қажетті көлемін талқылаймыз.">Обсудим задачу, условия и необходимый объём работ.</p></article>
-       <article class="benefit"><span class="index">03</span><h3 data-ru="Согласуем стоимость" data-kz="Құнын келісеміз">Согласуем стоимость</h3><p data-ru="До начала работ согласуем объём и стоимость с учётом вашей задачи." data-kz="Жұмыс басталғанға дейін тапсырмаңызға сай жұмыс көлемі мен құнын келісеміз.">До начала работ согласуем объём и стоимость с учётом вашей задачи.</p></article>
-     </div>
-   </div>
- </section>
- 
- <section class="coverage">
-   <div class="container">
-     <div class="section-head">
-       <div class="section-kicker" data-ru="ГЕОГРАФИЯ РАБОТ" data-kz="ҚЫЗМЕТ КӨРСЕТУ АЙМАҒЫ">ГЕОГРАФИЯ РАБОТ</div>
-       <h2 class="section-title" data-ru="Работаем в вашем городе" data-kz="Сіздің қалаңызда қызмет көрсетеміз">Работаем в вашем городе</h2>
-       <p class="section-lead" data-ru="Принимаем обращения по сантехническим, электрическим и плиточным работам в следующих населённых пунктах:" data-kz="Сантехникалық, электр және плитка жұмыстары бойынша келесі елді мекендерден өтініш қабылдаймыз:">Принимаем обращения по сантехническим, электрическим и плиточным работам в следующих населённых пунктах:</p>
-       <div class="city-list"><span class="city" data-ru="Караганда" data-kz="Қарағанды">Караганда</span><span class="city" data-ru="Пришахтинск" data-kz="Пришахтинск">Пришахтинск</span><span class="city" data-ru="Сортировка" data-kz="Сортировка">Сортировка</span></div>
-     </div>
-   </div>
- </section>
- 
- <section class="contact">
-   <div class="container">
-     <div class="section-kicker" style="color:var(--yellow)" data-ru="НА СВЯЗИ В ПЕРЕПИСКЕ" data-kz="ХАБАРЛАСУҒА ДАЙЫНБЫЗ">НА СВЯЗИ В ПЕРЕПИСКЕ</div>
-     <h2 class="section-title" data-ru="Обсудим вашу задачу?" data-kz="Жұмысыңызды талқылаймыз ба?">Обсудим вашу задачу?</h2>
-     <p class="section-lead" data-ru="Нажмите кнопку ниже — откроется WhatsApp с готовым сообщением. Останется отправить его и рассказать, какая помощь нужна." data-kz="Төмендегі батырманы басыңыз — WhatsApp дайын хабарламамен ашылады. Хабарламаны жіберіп, қандай көмек қажет екенін айта аласыз.">Нажмите кнопку ниже — откроется WhatsApp с готовым сообщением. Останется отправить его и рассказать, какая помощь нужна.</p>
-     <div class="hero-actions"><a class="btn btn-yellow pulse wa-link" href="https://wa.me/77473719750?text=Здравствуйте%21%20Хочу%20проконсультироваться%20по%20поводу%20ваших%20услуг." target="_blank" rel="noopener noreferrer"><span data-ru="Написать в WhatsApp" data-kz="WhatsApp арқылы жазу">Написать в WhatsApp</span><span aria-hidden="true">↗</span></a></div>
-     <div class="contact-note" data-ru="Только переписка — кнопок для звонка на сайте нет." data-kz="Тек хабарлама арқылы байланыс — сайтта қоңырау шалу батырмалары жоқ.">Только переписка — кнопок для звонка на сайте нет.</div>
-   </div>
- </section>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow" data-ru="КАРАГАНДА • ПРИШAХТИНСК • СОРТИРОВКА" data-kz="ҚАРАҒАНДЫ • ПРИШАХТИНСК • СОРТИРОВКА">КАРАГАНДА • ПРИШАХТИНСК • СОРТИРОВКА</div>
+        <h1 data-ru="Сантехник и электрик 24/7" data-kz="Сантехник және электрик 24/7">Сантехник и электрик 24/7</h1>
+        <p class="hero-copy" data-ru="Быстро реагируем на заявки в Караганде, Пришахтинске и Сортировке. Сантехника, электрика и плиточные работы. Напишите в WhatsApp — обсудим задачу и стоимость." data-kz="Қарағандыда, Пришахтинскіде және Сортировкада өтінімдерге жедел жауап береміз. Сантехника, электр жұмыстары, плитка төсеу және жөндеу жұмыстары. WhatsApp-қа жазыңыз — жұмысты және бағасын талқылаймыз.">Быстро реагируем на заявки в Караганде, Пришахтинске и Сортировке. Сантехника, электрика и плиточные работы. Напишите в WhatsApp — обсудим задачу и стоимость.</p>
+        <div class="hero-actions">
+          <a class="btn btn-yellow pulse wa-link" href="https://wa.me/77473719750?text=Здравствуйте%21%20Хочу%20проконсультироваться%20по%20поводу%20ваших%20услуг." target="_blank" rel="noopener noreferrer"><span data-ru="Написать в WhatsApp" data-kz="WhatsApp арқылы жазу">Написать в WhatsApp</span> <span aria-hidden="true">↗</span></a>
+          <a class="btn btn-ghost" href="#services" data-ru="Посмотреть услуги ↓" data-kz="Қызметтерді көру ↓">Посмотреть услуги ↓</a>
+        </div>
+      </div>
+      <aside class="hero-panel">
+        <div class="panel-label" data-ru="СПЕЦНАЗ СЕРВИС" data-kz="СПЕЦНАЗ СЕРВИС">СПЕЦНАЗ СЕРВИС</div>
+        <h2 data-ru="Работы для дома и ремонта" data-kz="Үйге және жөндеуге арналған жұмыстар">Работы для дома и ремонта</h2>
+        <div class="panel-row"><span class="panel-dot"></span><span data-ru="Сантехника: монтаж, замена и ремонт" data-kz="Сантехника: орнату, ауыстыру және жөндеу">Сантехника: монтаж, замена и ремонт</span></div>
+        <div class="panel-row"><span class="panel-dot"></span><span data-ru="Электрика: подключение и диагностика" data-kz="Электр жұмыстары: қосу және ақауды анықтау">Электрика: подключение и диагностика</span></div>
+        <div class="panel-row"><span class="panel-dot"></span><span data-ru="Плитка: укладка и аккуратное восстановление" data-kz="Плитка: төсеу және ұқыпты қалпына келтіру">Плитка: укладка и аккуратное восстановление</span></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker" data-ru="ЧЕМ ПОМОЖЕМ" data-kz="ҚАНДАЙ ҚЫЗМЕТ КӨРСЕТЕМІЗ">ЧЕМ ПОМОЖЕМ</div>
+        <h2 class="section-title" data-ru="Услуги Спецназ Сервис" data-kz="Спецназ Сервис қызметтері">Услуги Спецназ Сервис</h2>
+        <p class="section-lead" data-ru="Можно обратиться с одной конкретной задачей или обсудить несколько видов работ в рамках одного проекта." data-kz="Бір нақты жұмыс бойынша да, бір жоба аясындағы бірнеше жұмыс түрі бойынша да хабарласа аласыз.">Можно обратиться с одной конкретной задачей или обсудить несколько видов работ в рамках одного проекта.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service-card">
+          <div class="service-number" data-ru="Сантехнические работы" data-kz="Сантехникалық жұмыстар">Сантехнические работы</div>
+          <h3 data-ru="Сантехнические работы" data-kz="Сантехникалық жұмыстар">Сантехнические работы</h3>
+          <p data-ru="Монтаж, подключение, замена и ремонт сантехнического оборудования." data-kz="Сантехникалық жабдықты орнату, қосу, ауыстыру және жөндеу.">Монтаж, подключение, замена и ремонт сантехнического оборудования.</p>
+          <ul>
+            <li data-ru="Установка и замена смесителей, душевых леек и шлангов" data-kz="Араластырғыштарды, душ бастиектері мен шлангілерді орнату және ауыстыру">Установка и замена смесителей, душевых леек и шлангов</li>
+            <li data-ru="Установка унитазов, раковин и моек" data-kz="Унитаз, қолжуғыш және асүй раковинасын орнату">Установка унитазов, раковин и моек</li>
+            <li data-ru="Установка бойлеров (титанов), радиаторов и полотенцесушителей" data-kz="Бойлерлерді (титандарды), радиаторлар мен сүлгі кептіргіштерді орнату">Установка бойлеров (титанов), радиаторов и полотенцесушителей</li>
+            <li data-ru="Замена сифонов, гибких подводок, запорных кранов и арматуры бачка" data-kz="Сифондарды, иілгіш жалғағыштарды, жабу крандарын және бачок арматурасын ауыстыру">Замена сифонов, гибких подводок, запорных кранов и арматуры бачка</li>
+            <li data-ru="Устранение протечек, засоров и мелких неисправностей" data-kz="Су ағуын, бітелуді және ұсақ ақауларды жою">Устранение протечек, засоров и мелких неисправностей</li>
+            <li data-ru="Подключение стиральных и посудомоечных машин" data-kz="Кір жуғыш және ыдыс жуғыш машиналарды қосу">Подключение стиральных и посудомоечных машин</li>
+          </ul>
+        </article>
+        <article class="service-card">
+          <div class="service-number" data-ru="Электромонтажные работы" data-kz="Электр монтаждау жұмыстары">Электромонтажные работы</div>
+          <h3 data-ru="Электромонтажные работы" data-kz="Электр монтаждау жұмыстары">Электромонтажные работы</h3>
+          <p data-ru="Установка, подключение, замена оборудования и поиск электрических неисправностей." data-kz="Жабдықты орнату, қосу, ауыстыру және электр ақауларын анықтау.">Установка, подключение, замена оборудования и поиск электрических неисправностей.</p>
+          <ul>
+            <li data-ru="Установка люстр, светильников и бра" data-kz="Аспашамдарды, шамдарды және бра орнату">Установка люстр, светильников и бра</li>
+            <li data-ru="Установка и перенос розеток и выключателей" data-kz="Розеткалар мен қосқыштарды орнату және орнын ауыстыру">Установка и перенос розеток и выключателей</li>
+            <li data-ru="Прокладка кабеля и подключение бытового оборудования" data-kz="Кабель тарту және тұрмыстық жабдықты қосу">Прокладка кабеля и подключение бытового оборудования</li>
+            <li data-ru="Проверка и ревизия электрощитка, автоматов и соединений" data-kz="Электр қалқанын, автоматтарды және қосылыстарды тексеру">Проверка и ревизия электрощитка, автоматов и соединений</li>
+            <li data-ru="Поиск причин отключения электричества и неисправностей" data-kz="Электрдің өшу себептерін және ақауларды анықтау">Поиск причин отключения электричества и неисправностей</li>
+            <li data-ru="Замена автоматов, розеток, выключателей и повреждённых участков проводки" data-kz="Автоматтарды, розеткаларды, қосқыштарды және сымның зақымдалған бөліктерін ауыстыру">Замена автоматов, розеток, выключателей и повреждённых участков проводки</li>
+          </ul>
+        </article>
+        <article class="service-card">
+          <div class="service-number" data-ru="Укладка плитки" data-kz="Плитка төсеу">Укладка плитки</div>
+          <h3 data-ru="Плиточные работы" data-kz="Плитка төсеу жұмыстары">Плиточные работы</h3>
+          <p data-ru="Укладка кафеля и керамической плитки, а также аккуратные локальные работы при ремонте." data-kz="Кафель және керамикалық плитка төсеу, сондай-ақ жөндеу кезінде плитканы жергілікті түрде ұқыпты ауыстыру.">Укладка кафеля и керамической плитки, а также аккуратные локальные работы при ремонте.</p>
+          <ul>
+            <li data-ru="Укладка плитки" data-kz="Плитка төсеу">Укладка плитки на стены и пол</li>
+            <li data-ru="Аккуратное снятие и замена отдельных плиток" data-kz="Жеке плиткаларды ұқыпты алып, ауыстыру">Аккуратное снятие и замена отдельных плиток</li>
+            <li data-ru="Частичный демонтаж для доступа к скрытым коммуникациям" data-kz="Жасырын коммуникацияларға жету үшін плитканың бір бөлігін алу">Частичный демонтаж для доступа к скрытым коммуникациям</li>
+            <li data-ru="Восстановление плиточной отделки после ремонта труб и коммуникаций" data-kz="Құбырлар мен коммуникациялар жөнделгеннен кейін плитка қаптамасын қалпына келтіру">Восстановление плиточной отделки после ремонта труб и коммуникаций</li>
+          </ul>
+        </article>
+        <article class="service-card">
+          <div class="service-number" data-ru="Другие работы" data-kz="Басқа жұмыстар">Другие работы</div>
+          <h3 data-ru="Другие работы" data-kz="Басқа жұмыстар">Другие работы</h3>
+          <p data-ru="Сочетаем сантехнические, электрические и сопутствующие работы в рамках согласованной задачи." data-kz="Келісілген тапсырма аясында сантехникалық, электр және қосымша жұмыстарды кешенді түрде орындаймыз.">Сочетаем сантехнические, электрические и сопутствующие работы в рамках согласованной задачи.</p>
+          <ul>
+            <li data-ru="Обсуждение задачи и нужных этапов" data-kz="Міндет пен қажетті кезеңдерді талқылау">Обсуждение задачи и нужных этапов</li>
+            <li data-ru="Согласование объёма работ до начала" data-kz="Жұмыс басталғанға дейін көлемін келісу">Согласование объёма работ до начала</li>
+            <li data-ru="Выполнение отдельных этапов в рамках одного обращения" data-kz="Бір өтініш аясында бірнеше кезеңді орындау">Выполнение отдельных этапов в рамках одного обращения</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="process">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker" data-ru="ПОНЯТНО И ЗАРАНЕЕ" data-kz="ТҮСІНІКТІ ЖӘНЕ АЛДЫН АЛА">ПОНЯТНО И ЗАРАНЕЕ</div>
+        <h2 class="section-title" data-ru="Как обсудить вашу задачу" data-kz="Жұмысты қалай талқылауға болады">Как обсудить вашу задачу</h2>
+        <p class="section-lead" data-ru="Свяжитесь с нами в переписке — без необходимости звонить." data-kz="Бізге хабарлама жазыңыз — қоңырау шалудың қажеті жоқ.">Свяжитесь с нами в переписке — без необходимости звонить.</p>
+      </div>
+      <div class="benefits">
+        <article class="benefit"><span class="index">01</span><h3 data-ru="Напишите в WhatsApp" data-kz="WhatsApp арқылы жазыңыз">Напишите в WhatsApp</h3><p data-ru="Опишите, что нужно установить, заменить или отремонтировать. При желании приложите фото." data-kz="Нені орнату, ауыстыру немесе жөндеу керегін жазыңыз. Қаласаңыз, фотосурет тіркей аласыз.">Опишите, что нужно установить, заменить или отремонтировать. При желании приложите фото.</p></article>
+        <article class="benefit"><span class="index">02</span><h3 data-ru="Уточним детали" data-kz="Мән-жайын нақтылаймыз">Уточним детали</h3><p data-ru="Обсудим задачу, условия и необходимый объём работ." data-kz="Жұмыстың түрін, жағдайын және қажетті көлемін талқылаймыз.">Обсудим задачу, условия и необходимый объём работ.</p></article>
+        <article class="benefit"><span class="index">03</span><h3 data-ru="Согласуем стоимость" data-kz="Құнын келісеміз">Согласуем стоимость</h3><p data-ru="До начала работ согласуем объём и стоимость с учётом вашей задачи." data-kz="Жұмыс басталғанға дейін тапсырмаңызға сай жұмыс көлемі мен құнын келісеміз.">До начала работ согласуем объём и стоимость с учётом вашей задачи.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="coverage">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker" data-ru="ГЕОГРАФИЯ РАБОТ" data-kz="ҚЫЗМЕТ КӨРСЕТУ АЙМАҒЫ">ГЕОГРАФИЯ РАБОТ</div>
+        <h2 class="section-title" data-ru="Работаем в вашем городе" data-kz="Сіздің қалаңызда қызмет көрсетеміз">Работаем в вашем городе</h2>
+        <p class="section-lead" data-ru="Принимаем обращения по сантехническим, электрическим и плиточным работам в следующих населённых пунктах:" data-kz="Сантехникалық, электр және плитка жұмыстары бойынша келесі елді мекендерден өтініш қабылдаймыз:">Принимаем обращения по сантехническим, электрическим и плиточным работам в следующих населённых пунктах:</p>
+        <div class="city-list"><span class="city" data-ru="Караганда" data-kz="Қарағанды">Караганда</span><span class="city" data-ru="Пришахтинск" data-kz="Пришахтинск">Пришахтинск</span><span class="city" data-ru="Сортировка" data-kz="Сортировка">Сортировка</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="container">
+      <div class="section-kicker" style="color:var(--yellow)" data-ru="НА СВЯЗИ В ПЕРЕПИСКЕ" data-kz="ХАБАРЛАСУҒА ДАЙЫНБЫЗ">НА СВЯЗИ В ПЕРЕПИСКЕ</div>
+      <h2 class="section-title" data-ru="Обсудим вашу задачу?" data-kz="Жұмысыңызды талқылаймыз ба?">Обсудим вашу задачу?</h2>
+      <p class="section-lead" data-ru="Нажмите кнопку ниже — откроется WhatsApp с готовым сообщением. Останется отправить его и рассказать, какая помощь нужна." data-kz="Төмендегі батырманы басыңыз — WhatsApp дайын хабарламамен ашылады. Хабарламаны жіберіп, қандай көмек қажет екенін айта аласыз.">Нажмите кнопку ниже — откроется WhatsApp с готовым сообщением. Останется отправить его и рассказать, какая помощь нужна.</p>
+      <div class="hero-actions"><a class="btn btn-yellow pulse wa-link" href="https://wa.me/77473719750?text=Здравствуйте%21%20Хочу%20проконсультироваться%20по%20поводу%20ваших%20услуг." target="_blank" rel="noopener noreferrer"><span data-ru="Написать в WhatsApp" data-kz="WhatsApp арқылы жазу">Написать в WhatsApp</span><span aria-hidden="true">↗</span></a></div>
+      <div class="contact-note" data-ru="Только переписка — кнопок для звонка на сайте нет." data-kz="Тек хабарлама арқылы байланыс — сайтта қоңырау шалу батырмалары жоқ.">Только переписка — кнопок для звонка на сайте нет.</div>
+    </div>
+  </section>
 </main>
- 
+
 <footer>
- <div class="container footer-inner">
-   <div><div class="footer-brand">СПЕЦНАЗ СЕРВИС</div><div class="footer-meta" data-ru="Сантехника · Электрика · Плиточные работы" data-kz="Сантехника · Электр жұмыстары · Плитка төсеу">Сантехника · Электрика · Плиточные работы</div><div class="footer-meta" data-ru="Караганда · Пришахтинск · Сортировка" data-kz="Қарағанды · Пришахтинск · Сортировка">Караганда · Пришахтинск · Сортировка</div></div>
-   <a class="instagram" href="https://www.instagram.com/spetsnaz_servis.krg/" target="_blank" rel="noopener noreferrer">Instagram · @spetsnaz_servis.krg ↗</a>
-   <div class="footer-meta">© <span id="year"></span> Спецназ Сервис</div>
- </div>
+  <div class="container footer-inner">
+    <div><div class="footer-brand">СПЕЦНАЗ СЕРВИС</div><div class="footer-meta" data-ru="Сантехника · Электрика · Плиточные работы" data-kz="Сантехника · Электр жұмыстары · Плитка төсеу">Сантехника · Электрика · Плиточные работы</div><div class="footer-meta" data-ru="Караганда · Пришахтинск · Сортировка" data-kz="Қарағанды · Пришахтинск · Сортировка">Караганда · Пришахтинск · Сортировка</div></div>
+    <a class="instagram" href="https://www.instagram.com/spetsnaz_servis.krg/" target="_blank" rel="noopener noreferrer">Instagram · @spetsnaz_servis.krg ↗</a>
+    <div class="footer-meta">© <span id="year"></span> Спецназ Сервис</div>
+  </div>
 </footer>
- 
+
 <script>
 (function () {
- function setSiteLanguage(language) {
-   var lang = language === "kz" ? "kz" : "ru";
-   document.documentElement.setAttribute("lang", lang === "kz" ? "kk" : "ru");
- 
-   document.querySelectorAll("[data-ru][data-kz]").forEach(function (element) {
-     var translatedText = element.getAttribute("data-" + lang);
-     if (translatedText !== null) element.textContent = translatedText;
-   });
- 
-   ["ru", "kz"].forEach(function (code) {
-     var button = document.getElementById(code + "Btn");
-     if (button) {
-       button.classList.toggle("active", code === lang);
-       button.setAttribute("aria-pressed", code === lang ? "true" : "false");
-     }
-   });
- 
-   var messages = {
-     ru: "Здравствуйте! Хочу проконсультироваться по поводу ваших услуг.",
-     kz: "Сәлеметсіз бе! Қызметтеріңіз бойынша кеңес алғым келеді."
-   };
-   var waUrl = "https://wa.me/77473719750?text=" + encodeURIComponent(messages[lang]);
-   document.querySelectorAll(".wa-link").forEach(function (link) {
-     link.setAttribute("href", waUrl);
-   });
- 
-   document.title = lang === "ru"
-     ? "Спецназ Сервис — сантехника, электрика и плиточные работы"
-     : "Спецназ Сервис — сантехникалық, электр және плитка жұмыстары";
- 
-   try { localStorage.setItem("spetsnaz-language", lang); } catch (error) {}
- }
- 
- window.setSiteLanguage = setSiteLanguage;
- 
- document.addEventListener("click", function (event) {
-   var button = event.target.closest("#ruBtn, #kzBtn");
-   if (!button) return;
-   event.preventDefault();
-   setSiteLanguage(button.id === "kzBtn" ? "kz" : "ru");
- });
- 
- function initializeSite() {
-   var year = document.getElementById("year");
-   if (year) year.textContent = new Date().getFullYear();
-   var savedLanguage = "ru";
-   try {
-     var storedLanguage = localStorage.getItem("spetsnaz-language");
-     if (storedLanguage === "kz" || storedLanguage === "ru") savedLanguage = storedLanguage;
-   } catch (error) {}
-   setSiteLanguage(savedLanguage);
- }
- 
- if (document.readyState === "loading") {
-   document.addEventListener("DOMContentLoaded", initializeSite);
- } else {
-   initializeSite();
- }
+  function setSiteLanguage(language) {
+    var lang = language === "kz" ? "kz" : "ru";
+    document.documentElement.setAttribute("lang", lang === "kz" ? "kk" : "ru");
+
+    document.querySelectorAll("[data-ru][data-kz]").forEach(function (element) {
+      var translatedText = element.getAttribute("data-" + lang);
+      if (translatedText !== null) element.textContent = translatedText;
+    });
+
+    ["ru", "kz"].forEach(function (code) {
+      var button = document.getElementById(code + "Btn");
+      if (button) {
+        button.classList.toggle("active", code === lang);
+        button.setAttribute("aria-pressed", code === lang ? "true" : "false");
+      }
+    });
+
+    var messages = {
+      ru: "Здравствуйте! Хочу проконсультироваться по поводу ваших услуг.",
+      kz: "Сәлеметсіз бе! Қызметтеріңіз бойынша кеңес алғым келеді."
+    };
+    var waUrl = "https://wa.me/77473719750?text=" + encodeURIComponent(messages[lang]);
+    document.querySelectorAll(".wa-link").forEach(function (link) {
+      link.setAttribute("href", waUrl);
+    });
+
+    document.title = lang === "ru"
+      ? "Спецназ Сервис — сантехника, электрика и плиточные работы"
+      : "Спецназ Сервис — сантехникалық, электр және плитка жұмыстары";
+
+    try { localStorage.setItem("spetsnaz-language", lang); } catch (error) {}
+  }
+
+  window.setSiteLanguage = setSiteLanguage;
+
+  document.addEventListener("click", function (event) {
+    var button = event.target.closest("#ruBtn, #kzBtn");
+    if (!button) return;
+    event.preventDefault();
+    setSiteLanguage(button.id === "kzBtn" ? "kz" : "ru");
+  });
+
+  function initializeSite() {
+    var year = document.getElementById("year");
+    if (year) year.textContent = new Date().getFullYear();
+    var savedLanguage = "ru";
+    try {
+      var storedLanguage = localStorage.getItem("spetsnaz-language");
+      if (storedLanguage === "kz" || storedLanguage === "ru") savedLanguage = storedLanguage;
+    } catch (error) {}
+    setSiteLanguage(savedLanguage);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initializeSite);
+  } else {
+    initializeSite();
+  }
 })();
 </script>
 </body>
